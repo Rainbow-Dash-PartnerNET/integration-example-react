@@ -18,7 +18,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "predeploy": "npm run build",
+    "rename": "cp build/static/js/main.*.js build/static/js/main.js && cp build/static/css/main.*.css build/static/css/main.css",
+    "predeploy": "npm run build && npm run rename",
     "deploy": "npm run predeploy && gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
